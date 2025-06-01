@@ -6,11 +6,9 @@ from src.data_preprocessing import DataPreprocessing
 from src.feature import FeatureEngineering
 import src.data_loader as data
 
-MODEL_DIR = os.getenv("MODEL_DIR", r"E:\CS - CSNgành\CS116 - Lập trình Python cho ML\Project\Deploy Model")
-
 # def show_model():
-df = data.load_data(os.path.join(MODEL_DIR, 'data/Train.csv'))
-model = joblib.load(os.path.join(MODEL_DIR, 'model/stacking_model.pkl'))
+df = data.load_data(os.path.join(os.path.dirname(__file__), '..', 'data', 'Train.csv'))
+model = joblib.load(os.path.join(os.path.dirname(__file__), '..', 'model', 'stacking_model.pkl'))
 
 st.title("Customer Segmentation Classification")
 

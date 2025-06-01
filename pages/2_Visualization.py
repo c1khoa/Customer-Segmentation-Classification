@@ -5,10 +5,8 @@ import os
 import src.data_loader as data
 from src.data_preprocessing import DataPreprocessing
 
-MODEL_DIR = os.getenv("MODEL_DIR", r"E:\CS - CSNgành\CS116 - Lập trình Python cho ML\Project\Deploy Model")
-
 # def show_visualization():
-df = data.load_data(os.path.join(MODEL_DIR, 'data/Train.csv'))
+df = data.load_data(os.path.join(os.path.dirname(__file__), '..', 'data', 'Train.csv'))
 df_null = df.copy()
 df_encoding, _ = DataPreprocessing(df_null).process(df_null)
 
